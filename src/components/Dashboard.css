@@ -1,0 +1,18 @@
+.note-container {
+  padding: 10px;
+}
+.cir{
+  margin: 15px auto;
+  width:150px;
+  height:60px;
+  border-radius: 50px;
+  border: 2px dashed;
+  cursor: pointer;
+}
+.cir:hover{
+color:#31e1f7;
+}
+.plus{
+  margin-top:5px;
+  font-size: 30px;
+}
