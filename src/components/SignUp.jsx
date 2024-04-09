@@ -49,7 +49,7 @@ const SignUp = () => {
                 width="150px"
               />
               <h2>Safe Note</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p>This Safe Notes offers a secure way to store personal thoughts and secrets. It's like a digital diary with encryption.</p>
             </div>
             <div className="form-child-right">
               <form onSubmit={onSignUP}>
@@ -83,13 +83,13 @@ const SignUp = () => {
                 </div>
                 <div>
                   <button className="button" type="submit">
-                    Sign In
+                    Sign Up
                   </button>
                   <br />
                   <h5 className="have-account">
                     Already have an account?
                     <Link className="linkforsignin" to="/signin">
-                      Sign Up
+                      Sign In
                     </Link>
                   </h5>
                 </div>
