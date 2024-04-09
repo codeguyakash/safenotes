@@ -6,6 +6,7 @@ import Model from "./Model";
 
 const Notes = ({ item }) => {
   const [desc, setDesc] = useState("");
+  const [msg, setMsg] = useState("");
   const [moreBtn, setMoreBtn] = useState(true);
   const [open, setOpen] = useState(false);
   const [overlay, setOverlay] = useState(false);
@@ -26,7 +27,7 @@ const Notes = ({ item }) => {
       setDesc(description);
       setMoreBtn(false);
     }
-  }, [description]);
+  }, [description, msg]);
 
   const OpenModel = () => {
     setOpen(true);
@@ -49,15 +50,17 @@ const Notes = ({ item }) => {
       })
       .then((res) => {
         if (res.status === 202) {
+          // (res)
           setOpen(false);
           setOverlay(false);
-          console.log(res);
+          alert(`Delete Success : ${res.data?._id}`);
+          setMsg(`Delete Success : ${res.data?._id}`);
+          window.location.reload();
         }
       });
   };
   return (
     <>
-      
       <div className="notes-card" onClick={OpenModel}>
         <div className="date">{`${day}-${month}-${year}`}</div>
         <div className="note-title-div">
