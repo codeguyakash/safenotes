@@ -1,6 +1,6 @@
 import "./Model.css";
 const Model = (props) => {
-  console.log(props)
+  // console.log(props)
   return (
     <>
       <div className={props.open ? "activeModel" : "model"}>

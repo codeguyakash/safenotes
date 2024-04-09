@@ -1,5 +1,5 @@
 import { useNavigate, Link } from "react-router-dom";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import "./Sign.css";
 import axios from "axios";
 import Navbar from "../components/Navbar";
@@ -10,6 +10,7 @@ const SignUp = () => {
   const usernameRef = useRef("");
   const emailRef = useRef("");
   const passwordRef = useRef("");
+  const [loading, setLoading] = useState(false);
 
   const onSignUP = async (e) => {
     e.preventDefault();
@@ -19,6 +20,7 @@ const SignUp = () => {
       password: passwordRef.current.value,
     };
     try {
+      setLoading(true);
       const response = await axios.post(
         "https://note-application-be.onrender.com/users/signup",
         data
@@ -27,9 +29,11 @@ const SignUp = () => {
       if (response.status === 201) {
         // console.log(response);
         alert("User Created");
+        setLoading(false);
         navigate("/signin");
       }
     } catch (error) {
+      console.log(error.response.data.message);
       alert(error.response.data.message);
     }
   };
@@ -85,7 +89,7 @@ const SignUp = () => {
                 </div>
                 <div>
                   <button className="button" type="submit">
-                    Sign Up
+                    {loading ? "Loading..." : "Sign Up"}
                   </button>
                   <br />
                   <h5 className="have-account">

@@ -13,6 +13,7 @@ const Signin = () => {
   const [overlay, setOverlay] = useState(false);
   const [hide, setHide] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const CloseModel = () => {
     setOpen(false);
@@ -26,11 +27,13 @@ const Signin = () => {
       password: passwordRef.current.value,
     };
     try {
+      setLoading(true);
       const response = await axios.post(
         "https://note-application-be.onrender.com/users/signin",
         data
       );
       if (response.status === 200) {
+        setLoading(false);
         localStorage.setItem("token", response.data.token);
         navigate("/dashboard");
         localStorage.setItem("username", response.data.user.username);
@@ -93,8 +96,8 @@ const Signin = () => {
                   ></input>
                 </div>
                 <div>
-                  <button className="button" type="submit">
-                    Sign In
+                  <button className="button" type="submit" disabled={loading}>
+                    {loading ? "Loading..." : "Sign In"}
                   </button>
                   <br />
                   <h5 className="have-account">
