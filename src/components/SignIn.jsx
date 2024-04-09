@@ -67,7 +67,7 @@ const Signin = () => {
                 width="150px"
               />
               <h2>Safe Note</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p>This Safe Notes offers a secure way to store personal thoughts and secrets. It's like a digital diary with encryption.</p>
             </div>
             <div className="form-child-right">
               <form onSubmit={onSignIN}>
