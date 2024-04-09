@@ -65,16 +65,21 @@
   padding-top: 110px;
   height: 500px;
   width: 450px;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .form-child-right {
   padding-top: 110px;
   height: 500px;
   width: 450px;
 }
+.form-child-left > h2{
+  color: black;
+  margin-bottom: 20px;
+}
 .form-child-left > p {
   width: 290px;
   margin: auto;
+  color: black;
 }
 /* this is for form finish */
 .have-account {
