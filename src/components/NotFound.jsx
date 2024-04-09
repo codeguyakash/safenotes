@@ -5,9 +5,7 @@ const NotFound = () => {
   return (
     <>
       <Navbar />
-      <h1>404 Not Found</h1>
-
-      
+      <h1 style={{ color: "white", marginTop: "100px" }}> :( 404 Page Not Found</h1>
     </>
   );
 };
