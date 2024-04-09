@@ -38,7 +38,6 @@ const Signin = () => {
     } catch (error) {
       if (error.response.status === 404) {
         setErrorMessage(error.response.data.message);
-        navigate("/signup");
         setOpen(true);
         setOverlay(true);
         setHide(true);
