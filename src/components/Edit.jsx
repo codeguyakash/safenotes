@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import DashboardNav from "./DashboardNav";
+import DashboardNav from "../Pages/DashboardNav";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import "./CreateNotes.css";

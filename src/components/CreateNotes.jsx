@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import DashboardNav from "./DashboardNav";
+import DashboardNav from "../Pages/DashboardNav";
 import "./CreateNotes.css";
 import Model from "./Model";
 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Notes from "./Notes";
+import Notes from "../components/Notes";
 import "./Dashboard.css";
 import DashboardNav from "./DashboardNav";
 

@@ -2,13 +2,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 // import Home from "./components/Home";
-import SignUp from "./components/SignUp";
-import SignIn from "./components/SignIn";
-import Dashboard from "./components/Dashboard";
+import SignUp from "./Pages/SignUp";
+import SignIn from "./Pages/SignIn";
+import Dashboard from "./Pages/Dashboard";
 import CreateNotes from "./components/CreateNotes";
-import RequireAuth from "./components/Auth/RequireAuth";
-import PublicAuth from "./components/Auth/PublicAuth";
-import NotFound from "./components/NotFound";
+import RequireAuth from "./Auth/RequireAuth";
+import PublicAuth from "./Auth/PublicAuth";
+import NotFound from "./Pages/NotFound";
 import Edit from "./components/Edit";
 
 function App() {

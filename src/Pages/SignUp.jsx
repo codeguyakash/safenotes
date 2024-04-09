@@ -1,54 +1,36 @@
-import { useRef, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import "../components/Sign.css";
+import { useRef } from "react";
+import "./Sign.css";
 import axios from "axios";
-import Navbar from "./Navbar";
-import Model from "./Model";
+import Navbar from "../components/Navbar";
+// import Footer from "./Footer";
 
-const Signin = () => {
+const SignUp = () => {
   const navigate = useNavigate();
+  const usernameRef = useRef("");
   const emailRef = useRef("");
   const passwordRef = useRef("");
-  const [open, setOpen] = useState(false);
-  const [overlay, setOverlay] = useState(false);
-  const [hide, setHide] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
 
-  const CloseModel = () => {
-    setOpen(false);
-    setOverlay(false);
-  };
-
-  const onSignIN = async (e) => {
+  const onSignUP = async (e) => {
     e.preventDefault();
     const data = {
+      username: usernameRef.current.value,
       email: emailRef.current.value,
       password: passwordRef.current.value,
     };
     try {
       const response = await axios.post(
-        "https://note-application-be.onrender.com/users/signin",
+        "https://note-application-be.onrender.com/users/signup",
         data
       );
-      if (response.status === 200) {
-        localStorage.setItem("token", response.data.token);
-        navigate("/dashboard");
-        localStorage.setItem("username", response.data.user.username);
+      // console.log(response);
+      if (response.status === 201) {
+        console.log(response);
+        alert("User Created");
+        navigate("/signin");
       }
     } catch (error) {
-      if (error.response.status === 404) {
-        setErrorMessage(error.response.data.message);
-        // navigate("/signup");
-        setOpen(true);
-        setOverlay(true);
-        setHide(true);
-      } else if (error.response.status === 401) {
-        setErrorMessage(error.response.data.message);
-        setOpen(true);
-        setOverlay(true);
-        setHide(true);
-
-      }
+      alert(error.response.data.message);
     }
   };
 
@@ -70,8 +52,17 @@ const Signin = () => {
               <p>This Safe Notes offers a secure way to store personal thoughts and secrets. It's like a digital diary with encryption.</p>
             </div>
             <div className="form-child-right">
-              <form onSubmit={onSignIN}>
-                <h1 className="formheading">Sign In</h1>
+              <form onSubmit={onSignUP}>
+                <h1 className="formheading">Sign Up</h1>
+                <div>
+                  <input
+                    className="inputfield"
+                    type="text"
+                    ref={usernameRef}
+                    placeholder="Username"
+                    required
+                  ></input>
+                </div>
                 <div>
                   <input
                     className="inputfield"
@@ -92,13 +83,13 @@ const Signin = () => {
                 </div>
                 <div>
                   <button className="button" type="submit">
-                    Sign In
+                    Sign Up
                   </button>
                   <br />
                   <h5 className="have-account">
-                    Don't have an account?
-                    <Link className="linkforsignin" to="/signup">
-                      Sign Up
+                    Already have an account?
+                    <Link className="linkforsignin" to="/signin">
+                      Sign In
                     </Link>
                   </h5>
                 </div>
@@ -108,15 +99,8 @@ const Signin = () => {
           <div className="sub-child-right"></div>
         </div>
       </div>
-      <Model
-        hide={hide}
-        open={open}
-        CloseHandler={CloseModel}
-        over={overlay}
-        para={errorMessage}
-      />
       {/* <Footer/> */}
     </>
   );
 };
-export default Signin;
+export default SignUp;

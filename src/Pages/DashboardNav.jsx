@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import "./Button.css"
+import "../components/Button.css";
 
 const DashboardNav = () => {
   const navigate = useNavigate();
@@ -9,7 +9,6 @@ const DashboardNav = () => {
     localStorage.removeItem("username");
     navigate("/");
   };
- 
 
   return (
     <>
@@ -18,12 +17,12 @@ const DashboardNav = () => {
           <Link className="navbar" to="/dashboard">
             Dashboard
           </Link>
-          <button className="nav-button" onClick={SignOut}>Log Out</button>
+          <button className="nav-button" onClick={SignOut}>
+            Log Out
+          </button>
         </nav>
       </div>
-        <div className="side-bar">
-
-        </div>
+      <div className="side-bar"></div>
     </>
   );
 };
