@@ -36,16 +36,18 @@ const Signin = () => {
         localStorage.setItem("username", response.data.user.username);
       }
     } catch (error) {
-      if (error.response.status === 404) {
+      if (error.response.status == 404) {
+        alert(error.response.data.message);
         setErrorMessage(error.response.data.message);
-        setOpen(true);
-        setOverlay(true);
-        setHide(true);
+        // setOpen(true);
+        // setOverlay(true);
+        // setHide(true);
       } else if (error.response.status === 401) {
         setErrorMessage(error.response.data.message);
-        setOpen(true);
-        setOverlay(true);
-        setHide(true);
+        alert(error.response.data.message);
+        // setOpen(true);
+        // setOverlay(true);
+        // setHide(true);
       }
     }
   };
@@ -56,7 +58,6 @@ const Signin = () => {
       <div className="parent-container">
         <div className="child-container">
           <div className="sub-child-left"></div>
-
           <div className="form-parent-div">
             <div className="form-child-left">
               <img

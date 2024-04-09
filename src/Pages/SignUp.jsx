@@ -25,7 +25,7 @@ const SignUp = () => {
       );
       // console.log(response);
       if (response.status === 201) {
-        console.log(response);
+        // console.log(response);
         alert("User Created");
         navigate("/signin");
       }
@@ -40,7 +40,6 @@ const SignUp = () => {
       <div className="parent-container">
         <div className="child-container">
           <div className="sub-child-left"></div>
-
           <div className="form-parent-div">
             <div className="form-child-left">
               <img

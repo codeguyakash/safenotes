@@ -1,5 +1,6 @@
 import "./Model.css";
 const Model = (props) => {
+  console.log(props)
   return (
     <>
       <div className={props.open ? "activeModel" : "model"}>
@@ -13,8 +14,8 @@ const Model = (props) => {
           </button>
         </div>
         <hr className={props.hide ? "hide" : "model-hr"} />
-        <div className={props.hide ? "hide":"model-body"}>{props.para}</div>
-        <h3 className={props.hide ? "popup-msg" : "hide"}>{props.popup}</h3>
+        <div className={props.hide ? "hide":"model-body"}>{props?.para}</div>
+        <h3 className={props.hide ? "popup-msg" : "hide"}>{props?.popup}</h3>
         <hr className={props.hide ? "hide" : "model-hr"} />
         <div className="btndiv">
           <button
