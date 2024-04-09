@@ -49,7 +49,10 @@ const SignUp = () => {
                 width="150px"
               />
               <h2>Safe Note</h2>
-              <p>This Safe Notes offers a secure way to store personal thoughts and secrets. It's like a digital diary with encryption.</p>
+              <p>
+                This Safe Notes offers a secure way to store personal thoughts
+                and secrets. It's like a digital diary with encryption.
+              </p>
             </div>
             <div className="form-child-right">
               <form onSubmit={onSignUP}>
