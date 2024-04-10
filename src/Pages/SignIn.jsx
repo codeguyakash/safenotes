@@ -7,8 +7,8 @@ import Model from "../components/Model";
 
 const Signin = () => {
   const navigate = useNavigate();
-  const emailRef = useRef("");
-  const passwordRef = useRef("");
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
   const [open, setOpen] = useState(false);
   const [overlay, setOverlay] = useState(false);
   const [hide, setHide] = useState(false);

@@ -7,8 +7,8 @@ import Navbar from "../components/Navbar";
 
 const SignUp = () => {
   const navigate = useNavigate();
-  const usernameRef = useRef("");
-  const emailRef = useRef("");
+  const usernameRef = useRef(null);
+  const emailRef = useRef(null);
   const passwordRef = useRef("");
   const [loading, setLoading] = useState(false);
 

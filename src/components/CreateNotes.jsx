@@ -7,8 +7,8 @@ import Model from "./Model";
 
 const CreateNotes = () => {
   const navigate = useNavigate();
-  const titleRef = useRef("");
-  const descriptionRef = useRef("");
+  const titleRef = useRef(null);
+  const descriptionRef = useRef(null);
   const token = localStorage.getItem("token");
   const [open, setOpen] = useState(false);
   const [overlay, setOverlay] = useState(false);

@@ -8,8 +8,8 @@ import Model from "./Model";
 const Edit = () => {
   const navigate = useNavigate();
   const [updateNote, setUpdateNote] = useState([]);
-  const newtitleRef = useRef("");
-  const newdescriptionRef = useRef("");
+  const newtitleRef = useRef(null);
+  const newdescriptionRef = useRef(null);
   const token = localStorage.getItem("token");
   const [open, setOpen] = useState(false);
   const [overlay, setOverlay] = useState(false);
